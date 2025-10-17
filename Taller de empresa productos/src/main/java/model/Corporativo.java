@@ -25,7 +25,7 @@ public class Corporativo extends Cliente{
     }
 
     @Override
-    public double calcularDescuento(double total) {
-        return total * 0.05;
+    public double calcularDescuento(double totalCompra) {
+        return totalCompra * descuentoNegociado;
     }
 }

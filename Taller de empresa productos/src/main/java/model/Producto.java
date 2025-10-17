@@ -38,14 +38,4 @@ public abstract class Producto {
     public void setOwnedByEmpresa(Empresa ownedByEmpresa) {
         this.ownedByEmpresa = ownedByEmpresa;
     }
-
-    @Override
-    public String toString() {
-        return "Producto{" +
-                "codigo='" + codigo + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", precioUnitario=" + precioUnitario +
-                ", ownedByEmpresa=" + ownedByEmpresa +
-                '}';
-    }
 }

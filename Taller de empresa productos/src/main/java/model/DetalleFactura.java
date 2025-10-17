@@ -1,31 +1,28 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class DetalleFactura {
-    private List<Producto> productos;
+    private ArrayList<Producto> listaProductos = new ArrayList<>();
 
-    public DetalleFactura(List<Producto> productos) {
-        this.productos = productos;
+
+    public ArrayList<Producto> getProductos() {
+        return listaProductos;
+    }
+    public void setProductos(ArrayList<Producto> nuevaListaProductos) {
+        this.listaProductos = nuevaListaProductos;
     }
 
-    public List<Producto> getProductos() {
-        return productos;
+    public void agregarProducto(Producto producto) {
+        listaProductos.add(producto);
     }
+
 
     public double calcularSubtotal() {
         double subtotal = 0;
-        for (Producto p : productos) {
-            subtotal += p.getPrecioUnitario();
+        for (Producto aux : listaProductos) {
+            subtotal += aux.getPrecioUnitario();
         }
         return subtotal;
-    }
-
-    @Override
-    public String toString() {
-        return "DetalleFactura{" +
-                "productos=" + productos +
-                '}';
     }
 }

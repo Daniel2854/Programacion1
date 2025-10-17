@@ -50,26 +50,16 @@ public class Factura {
         this.ownedByEmpresa = ownedByEmpresa;
     }
 
-    public double calcularTotal() {
-        double subtotal = 0;
-        for (DetalleFactura detalle : listaDetallesFactura) {
-            subtotal += detalle.calcularSubtotal();
-        }
-        double descuento = cliente.calcularDescuento(subtotal);
-        return subtotal - descuento;
+    public void agregarDetalle(DetalleFactura detalleFactura) {
+        listaDetallesFactura.add(detalleFactura);
     }
 
-
-
-
-    @Override
-    public String toString() {
-        return "Factura{" +
-                "codigo='" + codigo + '\'' +
-                ", fecha=" + fecha +
-                ", cliente=" + cliente +
-                ", listaDetallesFactura=" + listaDetallesFactura +
-                ", ownedByEmpresa=" + ownedByEmpresa +
-                '}';
+    public double calcularTotalFactura() {
+        double totalSinDescuento = 0;
+        for (DetalleFactura aux : listaDetallesFactura) {
+            totalSinDescuento += aux.calcularSubtotal();
+        }
+        double descuento = cliente.calcularDescuento(totalSinDescuento);
+        return totalSinDescuento - descuento;
     }
 }

@@ -64,7 +64,6 @@ public class Empresa {
         this.listaFacturas = listaFacturas;
     }
 
-    // CRUD para Cliente
     public void agregarCliente(Cliente cliente) {
         listaClientes.add(cliente);
     }
@@ -78,21 +77,6 @@ public class Empresa {
         return null;
     }
 
-    public boolean actualizarCliente(String identificacion, Cliente nuevoCliente) {
-        for (int i = 0; i < listaClientes.size(); i++) {
-            if (listaClientes.get(i).getIdentificacion().equals(identificacion)) {
-                listaClientes.set(i, nuevoCliente);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean eliminarCliente(String identificacion) {
-        return listaClientes.removeIf(c -> c.getIdentificacion().equals(identificacion));
-    }
-
-    // CRUD para Producto
     public void agregarProducto(Producto producto) {
         listaProductos.add(producto);
     }
@@ -106,21 +90,6 @@ public class Empresa {
         return null;
     }
 
-    public boolean actualizarProducto(String codigo, Producto nuevoProducto) {
-        for (int i = 0; i < listaProductos.size(); i++) {
-            if (listaProductos.get(i).getCodigo().equals(codigo)) {
-                listaProductos.set(i, nuevoProducto);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean eliminarProducto(String codigo) {
-        return listaProductos.removeIf(p -> p.getCodigo().equals(codigo));
-    }
-
-    // CRUD para Factura
     public void agregarFactura(Factura factura) {
         listaFacturas.add(factura);
     }
@@ -132,32 +101,5 @@ public class Empresa {
             }
         }
         return null;
-    }
-
-    public boolean actualizarFactura(String codigo, Factura nuevaFactura) {
-        for (int i = 0; i < listaFacturas.size(); i++) {
-            if (listaFacturas.get(i).getCodigo().equals(codigo)) {
-                listaFacturas.set(i, nuevaFactura);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean eliminarFactura(String codigo) {
-        return listaFacturas.removeIf(f -> f.getCodigo().equals(codigo));
-    }
-
-    @Override
-    public String toString() {
-        return "Empresa{" +
-                "nombre='" + nombre + '\'' +
-                ", nit='" + nit + '\'' +
-                ", ubicacion='" + ubicacion + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", listaProductos=" + listaProductos +
-                ", listaClientes=" + listaClientes +
-                ", listaFacturas=" + listaFacturas +
-                '}';
     }
 }

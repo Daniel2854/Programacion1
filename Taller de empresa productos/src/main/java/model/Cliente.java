@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public abstract class Cliente{
     protected String nombre;
     protected String identificacion;
@@ -40,15 +38,5 @@ public abstract class Cliente{
         this.ownedByEmpresa = ownedByEmpresa;
     }
 
-    public abstract double calcularDescuento(double total);
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                ", identificacion='" + identificacion + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", ownedByEmpresa=" + ownedByEmpresa +
-                '}';
-    }
+    public abstract double calcularDescuento(double totalCompra);
 }
